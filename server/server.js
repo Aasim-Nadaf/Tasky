@@ -28,6 +28,10 @@ app.use((err, req, res, next) => {
     .json({ message: err.status ? err.message : "Server error" });
 });
 
+app.get("/", (req, res) => {
+  res.send("API is running");
+});
+
 const port = process.env.PORT || 5000;
 
 mongoose
